@@ -35,7 +35,7 @@ default[:'php-fpm'][:emergency_restart_interval] = 0
 default[:'php-fpm'][:process_control_timeout] = 0
 default[:'php-fpm'][:pools] = {
   "www" => {
-    :enable => true
+    :enable => false
   }
 }
 
