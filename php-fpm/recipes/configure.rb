@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-template node['php-fpm']['conf_file'] do
+template node[:php-fpm][:conf_file] do
   source "php-fpm.conf.erb"
   mode 00644
   owner "root"
@@ -26,14 +26,14 @@ template node['php-fpm']['conf_file'] do
   notifies :restart, "service[php-fpm]"
 end
 
-unless node['php-fpm']['pools'].key?('www')
+unless node[:php-fpm][:pools].key?('www')
   php_fpm_pool 'www' do
     enable false
   end
 end
 
-if node['php-fpm']['pools']
-  node['php-fpm']['pools'].each do |pool|
+if node[:php-fpm][:pools]
+  node[:php-fpm][:pools].each do |pool|
     if pool.is_a?(Array)
       pool_name = pool[0]
       pool = pool[1]
