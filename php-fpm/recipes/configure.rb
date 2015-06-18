@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-template node[:php-fpm][:conf_file] do
+template node[:'php-fpm'][:conf_file] do
   source "php-fpm.conf.erb"
   mode 00644
   owner "root"
