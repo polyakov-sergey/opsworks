@@ -39,7 +39,7 @@ default['php-fpm']['pools'] = {
   }
 }
 
-default['php-fpm']['skip_repository_install'] = false
+default['php-fpm']['skip_repository_install'] = true
 default['php-fpm']['installation_action'] = :install
 default['php-fpm']['version'] = nil
 
